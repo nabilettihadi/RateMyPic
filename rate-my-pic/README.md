@@ -1,59 +1,93 @@
-# RateMyPic
+# Rate My Pic
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+A modern web application built with Angular, NgRx, and Tailwind CSS that allows users to rate images with like/dislike functionality.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Load and display images in a responsive grid layout
+- Like/Dislike functionality for each image
+- State management with NgRx
+- Modern UI with Tailwind CSS
+- Responsive design for all screen sizes
+- Loading and error states handling
 
+## Tech Stack
+
+- Angular 17
+- NgRx for state management
+- Tailwind CSS for styling
+- RxJS for reactive programming
+
+## Prerequisites
+
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd rate-my-pic
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser and navigate to `http://localhost:4200`
 
-## Code scaffolding
+## Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── components/
+│   │   └── image-gallery/
+│   ├── models/
+│   │   └── image.ts
+│   ├── services/
+│   │   └── image.service.ts
+│   └── store/
+│       ├── actions/
+│       ├── effects/
+│       ├── reducers/
+│       └── selectors/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## API Endpoints
 
-```bash
-ng generate --help
-```
+The application uses the following API endpoints:
 
-## Building
+- GET `https://api.mademyday.ai/Mock/getimages.php` - Fetch images
+- POST `https://api.mademyday.ai/Mock/rateimages.php` - Rate images
 
-To build the project run:
+## Screenshots
 
-```bash
-ng build
-```
+[Screenshots will be added once the application is running]
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Development
 
-## Running unit tests
+- The application uses NgRx for state management
+- Tailwind CSS is used for styling
+- The application is fully responsive and works on all screen sizes
+- Error handling is implemented for API calls
+- Loading states are handled and displayed to users
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Contributing
 
-```bash
-ng test
-```
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Running end-to-end tests
+## License
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License.
