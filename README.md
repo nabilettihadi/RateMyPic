@@ -5,10 +5,10 @@ A modern web application for discovering and rating photos, built with Angular a
 ## 📸 Screenshots
 
 ### Light Mode
-![Light Mode](@Claire.png)
+![Light Mode](screenshots/Claire.png)
 
 ### Dark Mode
-![Dark Mode](@Sombre.png)
+![Dark Mode](screenshots/Sombre.png)
 
 ## ✨ Features
 
