@@ -1,34 +1,36 @@
 # Rate My Pic
 
-A modern web application built with Angular, NgRx, and Tailwind CSS that allows users to rate images with like/dislike functionality.
+A modern web application for discovering and rating photos, built with Angular and TailwindCSS.
 
-## Features
+## 📸 Screenshots
 
-- Load and display images in a responsive grid layout
-- Like/Dislike functionality for each image
-- State management with NgRx
-- Modern UI with Tailwind CSS
-- Responsive design for all screen sizes
-- Loading and error states handling
+### Light Mode
+![Light Mode](@Claire.png)
 
-## Tech Stack
+### Dark Mode
+![Dark Mode](@Sombre.png)
 
-- Angular 17
-- NgRx for state management
-- Tailwind CSS for styling
-- RxJS for reactive programming
+## ✨ Features
 
-## Prerequisites
+- 🌓 Light/Dark theme
+- 📱 Responsive design
+- ❤️ Image rating system
+- 🎯 Intuitive user interface
+- 🚀 Optimized performance
+- 🎨 Smooth animations
 
-- Node.js (v18 or higher)
-- npm (v9 or higher)
+## 🛠️ Prerequisites
 
-## Installation
+- Node.js (version 16 or higher)
+- npm (version 8 or higher)
+- Angular CLI (version 17 or higher)
+
+## 🚀 Installation
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd rate-my-pic
+git clone https://github.com/nabilettihadi/RateMyPic.git
+cd RateMyPic
 ```
 
 2. Install dependencies:
@@ -43,51 +45,64 @@ ng serve
 
 4. Open your browser and navigate to `http://localhost:4200`
 
-## Project Structure
+## ⚙️ Configuration
+
+### API Configuration
+
+1. Create an `environment.ts` file in `src/environments/`:
+```typescript
+export const environment = {
+  production: false,
+  apiUrl: 'YOUR_API_URL'
+};
+```
+
+2. Create an `environment.prod.ts` file for production:
+```typescript
+export const environment = {
+  production: true,
+  apiUrl: 'YOUR_PRODUCTION_API_URL'
+};
+```
+
+## 🏗️ Project Structure
 
 ```
 src/
 ├── app/
-│   ├── components/
-│   │   └── image-gallery/
-│   ├── models/
-│   │   └── image.ts
-│   ├── services/
-│   │   └── image.service.ts
-│   └── store/
-│       ├── actions/
-│       ├── effects/
-│       ├── reducers/
-│       └── selectors/
+│   ├── components/        # Reusable components
+│   ├── services/         # Services
+│   ├── store/           # Application state (NgRx)
+│   └── models/          # Interfaces and types
+├── assets/             # Static assets and images
+└── environments/       # Environment configurations
 ```
 
-## API Endpoints
+## 🔧 Available Scripts
 
-The application uses the following API endpoints:
+- `ng serve`: Start development server
+- `ng build`: Build the application
+- `ng test`: Run unit tests
+- `ng lint`: Check code with ESLint
 
-- GET `https://api.mademyday.ai/Mock/getimages.php` - Fetch images
-- POST `https://api.mademyday.ai/Mock/rateimages.php` - Rate images
+## 📦 Production
 
-## Screenshots
+To build the application for production:
 
-[Screenshots will be added once the application is running]
+```bash
+ng build --configuration production
+```
 
-## Development
+Build files will be generated in the `dist/` folder.
 
-- The application uses NgRx for state management
-- Tailwind CSS is used for styling
-- The application is fully responsive and works on all screen sizes
-- Error handling is implemented for API calls
-- Loading states are handled and displayed to users
+## 🤝 Contributing
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'feat: Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
