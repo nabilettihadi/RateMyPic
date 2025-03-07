@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { ImageGalleryComponent } from './components/image-gallery/image-gallery.component';
 import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switcher.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ImageGalleryComponent, ThemeSwitcherComponent],
+  imports: [CommonModule, ImageGalleryComponent, ThemeSwitcherComponent],
   template: `
     <div class="flex flex-col min-h-screen overflow-x-hidden bg-fixed bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <header class="bg-transparent backdrop-blur-sm transition-colors duration-300 fixed top-0 left-0 right-0 z-10">
