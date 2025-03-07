@@ -4,10 +4,6 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Image, RateRequest, RateResponse } from '../models/image';
 
-interface ApiRateResponse {
-  STATUS: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,22 +22,22 @@ export class ImageService {
         // Retourner des images de test en cas d'erreur
         const fallbackImages: Image[] = [
           {
-            id: 78202,
-            url: "https://srv4.imgcdnhost.com/large/2020/42/9630016794762239985748613-193397.png",
-            description: "Verschneite Landschaft",
-            likes: 276
+            id: 1,
+            url: 'https://images.unsplash.com/photo-1682687220063-4742bd7fd538',
+            description: 'Magnifique paysage de montagne',
+            likes: 42
           },
           {
-            id: 369466,
-            url: "https://srv4.imgcdnhost.com/medium/2019/02/4811679646798525787541187-859004.png",
-            description: "Leuchtturm am Meer",
-            likes: 298
+            id: 2,
+            url: 'https://images.unsplash.com/photo-1682687220063-4742bd7fd538',
+            description: 'Coucher de soleil sur la plage',
+            likes: 28
           },
           {
-            id: 134034,
-            url: "https://srv4.imgcdnhost.com/medium/2014/50/6241660302118869421189671-155134.png",
-            description: "Regenbogen über Wiese",
-            likes: 267
+            id: 3,
+            url: 'https://images.unsplash.com/photo-1682687220063-4742bd7fd538',
+            description: 'Forêt tropicale luxuriante',
+            likes: 15
           }
         ];
         console.log('Returning fallback images:', fallbackImages);
@@ -52,16 +48,8 @@ export class ImageService {
 
   rateImage(rateRequest: RateRequest): Observable<RateResponse> {
     console.log('Rating image with request:', rateRequest);
-    return this.http.post<ApiRateResponse>(this.RATE_IMAGES_URL, rateRequest).pipe(
+    return this.http.post<RateResponse>(this.RATE_IMAGES_URL, rateRequest).pipe(
       tap(response => console.log('Rate image response:', response)),
-      map(response => {
-        // L'API renvoie {"STATUS":"OK"}, nous devons le convertir en notre format
-        if (response && response.STATUS === 'OK') {
-          return { status: 'OK' as const };
-        } else {
-          return { status: 'ERROR' as const, message: 'Unknown error' };
-        }
-      }),
       catchError((error: HttpErrorResponse) => {
         console.error('Error rating image:', error);
         // Retourner une réponse de test en cas d'erreur
@@ -74,4 +62,4 @@ export class ImageService {
       })
     );
   }
-}
+} 

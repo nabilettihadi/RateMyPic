@@ -17,7 +17,7 @@ export const rateImage = createAction(
 );
 export const rateImageSuccess = createAction(
   '[Image] Rate Image Success',
-  props<{ id: string, rate: 'LIKE' | 'DISLIKE', response: RateResponse }>()
+  props<{ id: number, rate: 'LIKE' | 'DISLIKE', response: RateResponse }>()
 );
 export const rateImageFailure = createAction(
   '[Image] Rate Image Failure',

@@ -1,18 +1,16 @@
 export interface Image {
-  id: string;
+  id: number;
   url: string;
-  title?: string;
-  description?: string;
-  liked?: boolean;
-  disliked?: boolean;
+  description: string;
+  likes: number;
+}
+
+export interface RateRequest {
+  id: number;
+  rate: 'LIKE' | 'DISLIKE';
 }
 
 export interface RateResponse {
   status: 'OK' | 'ERROR';
   message?: string;
-}
-
-export interface RateRequest {
-  id: string;
-  rate: 'LIKE' | 'DISLIKE';
 }

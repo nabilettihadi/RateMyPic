@@ -42,8 +42,7 @@ export const imageReducer = createReducer(
       image.id === id 
         ? { 
             ...image, 
-            liked: rate === 'LIKE' ? true : image.liked,
-            disliked: rate === 'DISLIKE' ? true : image.disliked
+            likes: rate === 'LIKE' ? image.likes + 1 : image.likes - 1
           } 
         : image
     ),
